@@ -1,0 +1,6 @@
+npm install -g express-generator
+express myExpressApp 
+cd myExpressApp
+npm install
+npm start
+localhost:3000

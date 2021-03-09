@@ -1,0 +1,23 @@
+<div class='container'>
+    <h1 class="display-4">All Movies</h1>
+  
+    <table class="table ">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Id</th>
+          <th scope="col">Year</th>
+          <th scope="col">Rating</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let movie of movies'>
+          <td><a [routerLink]="['/edit', movie.name]">{{ movie.name }}</a></td>
+          <td>{{ movie.id }}</td>
+          <td>{{ movie.year }}</td>
+          <td>{{ movie.rating }}</td>
+          <td><i ><a [routerLink]="['/delete', movie.name]" class="fa fa-trash-o" style="font-size:25px; color: red"></a></i></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

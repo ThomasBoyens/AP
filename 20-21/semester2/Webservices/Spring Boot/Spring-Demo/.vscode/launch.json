@@ -1,0 +1,25 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - DemoApplication",
+            "request": "launch",
+            "mainClass": "edu.ap.spring.DemoApplication",
+            "projectName": "demospring"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - DemoApplication",
+            "request": "launch",
+            "mainClass": "edu.ap.spring.main.DemoApplication",
+            "projectName": "demospring"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - DemoApplication",
+            "request": "launch",
+            "mainClass": "edu.ap.spring.demospring.DemoApplication",
+            "projectName": "demospring"
+        }
+    ]
+}

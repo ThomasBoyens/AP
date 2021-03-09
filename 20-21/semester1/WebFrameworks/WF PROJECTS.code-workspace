@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": "..\\..\\..\\Users\\thoma\\Desktop\\Web Technology\\Templates"
+		},
+		{
+			"path": "..\\..\\..\\Users\\thoma\\Desktop\\Web Technology\\RickEnMortyOefening"
+		},
+		{
+			"path": "..\\..\\..\\Users\\thoma\\Desktop\\Web Technology\\Lesopdracht 1\\got-template"
+		},
+		{
+			"path": "..\\..\\..\\Users\\thoma\\Desktop\\Web Technology\\Examenoefeningen"
+		},
+		{
+			"path": "..\\..\\..\\Users\\thoma\\Desktop\\Web Technology\\ThomasBoyens"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Templates"
+	}
+}

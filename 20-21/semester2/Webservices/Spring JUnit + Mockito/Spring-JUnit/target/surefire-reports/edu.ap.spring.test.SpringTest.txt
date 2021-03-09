@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: edu.ap.spring.test.SpringTest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 14.657 s <<< FAILURE! - in edu.ap.spring.test.SpringTest
+test3  Time elapsed: 0.035 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <edu.ap.spring.jpa.Employee@7f5e9949> but was: <edu.ap.spring.jpa.Employee@323eecf8>
+	at edu.ap.spring.test.SpringTest.test3(SpringTest.java:50)
+
+test4  Time elapsed: 0.561 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <[edu.ap.spring.jpa.Employee@3e0e0ba7, edu.ap.spring.jpa.Employee@4f0c1409, edu.ap.spring.jpa.Employee@188ae8d2]> but was: <[edu.ap.spring.jpa.Employee@7f5e9949, edu.ap.spring.jpa.Employee@178ba69f, edu.ap.spring.jpa.Employee@4ae5ddc0]>
+	at edu.ap.spring.test.SpringTest.test4(SpringTest.java:67)
+

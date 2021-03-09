@@ -1,0 +1,6 @@
+create Maven project
+maven archetype webapp
+cd edu.ap.tb/
+mvn clean package
+edu.ap.tb.war => Run om Tomcat Server
+localhost:8080

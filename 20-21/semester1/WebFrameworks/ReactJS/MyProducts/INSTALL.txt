@@ -1,0 +1,8 @@
+INSTALL
+
+npx create-react-app products-client 
+npm install --save bootstrap
+npm install --save reactstrap react react-dom
+Import Bootstrap CSS in the src/index.js file: import 'bootstrap/dist/css/bootstrap.min.css'
+npm install --save axios
+npm install react-router-dom --save

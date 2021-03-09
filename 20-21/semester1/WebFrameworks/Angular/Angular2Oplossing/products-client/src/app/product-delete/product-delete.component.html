@@ -1,0 +1,13 @@
+<div class='container'>
+  <h1 class="display-4">Delete product</h1>
+  <br /><br />
+
+  <form [formGroup]="product" (ngSubmit)="onSubmit(product)">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" formControlName="name" placeholder="Enter product name"
+        formControlName="name" />
+    </div>
+    <button class="btn btn-primary" type="submit" [disabled]="!product.valid" >Delete</button>
+  </form>
+</div>

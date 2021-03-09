@@ -1,0 +1,13 @@
+map => client & server
+server => kopiëren van mongodb oefening
+client => genereren
+npm install
+npm install -g @angular/cli --save
+ng new client
+cd client
+ng serve / npm start
+cd server
+ng serve / npm start
+localhost:3000
+
+ng generate component

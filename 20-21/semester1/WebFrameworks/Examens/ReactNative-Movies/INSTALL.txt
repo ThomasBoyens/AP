@@ -1,0 +1,5 @@
+npm install --global expo-cli
+expo init products-client-mobile 
+npm install...
+cd products-client-mobile
+expo start -w

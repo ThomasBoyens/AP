@@ -1,0 +1,8 @@
+{
+"id":"MAR-01",
+"price":"45",
+"name":"Gin Mare",
+"brand":"Mediteranean",
+"description":"Very good gin",
+"link":"/link/products/MAR-01"
+}

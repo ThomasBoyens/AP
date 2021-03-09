@@ -1,0 +1,25 @@
+/*
+--1
+SELECT 
+    `BETALINGSNR`
+FROM
+    `boetes`
+WHERE
+    `BEDRAG` BETWEEN 50 AND 100;
+
+--2
+SELECT 
+    `BETALINGSNR`, `BEDRAG`
+FROM
+    `boetes`
+WHERE
+    `BEDRAG` NOT BETWEEN 50 AND 100;
+
+--3
+SELECT 
+    *
+FROM
+    `wedstrijden`
+WHERE
+    `WEDSTRIJDNR` BETWEEN 5 AND 10
+        AND `SPELERSNR` NOT IN (8 , 27);*/

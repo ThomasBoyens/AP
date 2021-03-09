@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset='UTF-8'>
+        <title>Movies</title>
+    </head>
+    <body>
+        <h1>All Movies</h1>
+        <br/><br/>
+        <ul>
+            <% movies.forEach(function(movie) { %>
+            <li>
+                <span><b>ID : </b><%= movie.id %></span><br />
+                <span><b>Name : </b><%= movie.name %></span><br />
+                <span><b>Year : </b><%= movie.year %></span><br />
+                <span><b>Rating : </b><%= movie.rating %></span><br />
+            </li>
+        <% }) %>
+        </ul>
+    <br/>
+
+    <a href='/movies/add'>Add movie</a>&nbsp;&nbsp;<a href='/movies/search'>Search movie</a>
+
+    </body>
+</html>

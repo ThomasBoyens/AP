@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        alert("You come across a zombie, you see a couple of weapons laying on the ground which could be useful in your fight.")
+        let weapon = prompt("Choose your weapon: Broken axe | Sword | Katana | Bow and Arrow ")
+        if (weapon == "Broken axe") {
+            alert("You pick up the broken axe as the zombie comes closer.")
+            let chance = Math.floor(Math.random() * 2) + 1;
+            console.log(chance)
+            switch (chance) {
+                case 1:
+                    alert("As you swing the axe, the axe falls apart but the axe head lands on the head of the zombie. Lucky you! You defeated the zombie.")
+                    break;
+                case 2:
+                    alert("As you swing the axe, the axe falls apart and the zombie is able to reach you. GAME OVER! The zombie ate your brains out")
+                    break;
+            }
+        }
+        if (weapon == "Sword") {
+            alert("You pick up the sword as the zombie comes closer.")
+            let chance = Math.floor(Math.random() * 2) + 1;
+            console.log(chance)
+            switch (chance) {
+                case 1:
+                    alert("You are able to cut the zombie's head right off. Nice one! You defeated the zombie.")
+                    break;
+                case 2:
+                    alert("The sword is too heavy so you can't swing it. Because of this the zombie is able to reach you. GAME OVER! The zombie ate your brains out")
+                    break;
+            }
+        }
+        if (weapon == "Katana") {
+            alert("You pick up the katana as the zombie comes closer.")
+            let chance = Math.floor(Math.random() * 2) + 1;
+            console.log(chance)
+            switch (chance) {
+                case 1:
+                    alert("You are able to cut the zombie's head right off. Nice one! You defeated the zombie.")
+                    break;
+                case 2:
+                    alert("You have never held a katana before so you struggle with using it. Because of this the zombie is able to reach you. GAME OVER! The zombie ate your brains out")
+                    break;
+            }
+        }
+        if (weapon == "Bow and arrow") {
+            alert("You pick up the bow and arrow as the zombie comes closer.")
+            let chance = Math.floor(Math.random() * 2) + 1;
+            console.log(chance)
+            switch (chance) {
+                case 1:
+                    alert("You are able to hit the zombie right in the head. Nice shot! You defeated the zombie.")
+                    break;
+                case 2:
+                    alert("You try shooting arrows at the zombie but you're a terrible shot, you miss every shot. Because of this the zombie is able to reach you. GAME OVER! The zombie ate your brains out")
+                    break;
+            }
+        }
+    </script> 
+</body>
+</html>

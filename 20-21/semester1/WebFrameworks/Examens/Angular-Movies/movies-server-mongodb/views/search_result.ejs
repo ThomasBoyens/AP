@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Movies</title>
+</head>
+
+<body>
+    <div>
+        <h2>Result</h2>
+        <br /><br />
+        <p>
+            <span><b>ID : </b><%= movie.id %></span><br />
+            <span><b>Name : </b><%= movie.name %></span><br />
+            <span><b>Year : </b><%= movie.year %></span><br />
+            <span><b>Rating : </b><%= movie.rating %></span><br />
+        </p>
+
+
+        <form action='/movies/delete' method='POST' onsubmit="return confirm('Bent u zeker?');">
+            <span><input type='hidden' name='id' value='<%= movie.id %>'></span>
+            <span><button type='submit'>Delete</button></span>
+        </form>
+
+</body>
+</html>

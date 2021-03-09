@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let getal = prompt("Geef een getal in tussen 1 en 10");
+    
+        if (getal < 1 || getal > 10) {
+            alert("Fout getal, gelieve een getal in te geven tussen 1 en 10");
+            location.reload();
+        }
+        else {
+            for (let i = 0; i < getal; i++) {5
+                document.write("*" + "<br>");
+            }
+        }
+
+    </script>
+
+</body>
+</html>

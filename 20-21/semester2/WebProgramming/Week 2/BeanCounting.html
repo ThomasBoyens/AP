@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        function countBs(str) {
+            let counter = 0;
+            for (var i = 0; i < str.length; i++) {
+                if (str.charAt(i) == "B") {
+                    counter++
+                }
+            }
+            return counter;
+        }
+
+        function countChar(str, char) {
+            let counter = 0;
+            for (var i = 0; i < str.length; i++) {
+                if (str.charAt(i) == char.toLowerCase()) {
+                    counter++
+                }
+            }
+            return counter;
+        }
+
+        console.log(countBs("BBC"));
+        
+        console.log(countChar("kakkerlak", "k"));
+
+    </script>
+
+</body>
+
+</html>

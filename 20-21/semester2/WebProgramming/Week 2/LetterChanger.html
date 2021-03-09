@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        function searchVowels(str) {
+            let counter = 0;
+            const checker = ["a", "e", "i", "o", "u"];
+            for (let char of str.toLowerCase()) {
+                if (checker.includes(char)) {
+                    counter++;
+                }
+            }
+            return counter;
+        }
+
+        function firstLetterToUpper(str) {
+            var firstLetterUpper = str.charAt(0).toUpperCase()
+            var newStr = str.replace(str.charAt(0), firstLetterUpper)
+            return newStr
+        }
+
+        console.log("Aantal klinkers: " + searchVowels("Anatomie"))
+        console.log(firstLetterToUpper("thomas"))
+
+    </script>
+
+</body>
+
+</html>

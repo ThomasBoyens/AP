@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>Products</title>
+  <!--link rel='stylesheet' href='stylesheets/bootstrap.min.css'-->
+</head>
+<body>
+  <h1>All products</h1>
+ <br/><br/>
+  <ul>
+  <% products.forEach(function(product) {%>
+    <li>
+      <span><b>ID : </b><%= product.id %></span><br />
+      <span><b>Name : </b><%= product.name %></span><br />
+      <span><b>Brand : </b><%= product.brand %></span><br />
+      <span><b>Description : </b><%= product.description %></span><br />
+      <span><b>Price : </b><%= product.price %></span><br />
+    </li>
+  <% }) %>
+  </ul>
+<br/>
+
+<a href='/products/add'>Add product</a>&nbsp;&nbsp;<a href='/products/search'>Search product</a>
+
+</body>
+</html>

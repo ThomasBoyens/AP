@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>Products</title>
+  <!--link rel='stylesheet' href='stylesheets/bootstrap.min.css'-->
+</head>
+<body>
+  <h2>Result</h2>
+  <br/><br/>
+  <p>
+   <span><b>ID : </b><%= product.id %></span><br />
+   <span><b>Name : </b><%= product.name %></span><br/>
+   <span><b>Brand : </b><%= product.brand %></span><br />
+   <span><b>Description : </b><%= product.description %></span><br/>
+   <span><b>Price : </b><%= product.price %></span><br/>
+  </p>
+
+  <form action='/products/delete' method='POST'>
+    <span><input type='hidden' name='id' value='<%= product.id %>'></span>
+    <span><button type='submit'>Delete</button></span>
+  </form>
+
+</body>
+</html>
