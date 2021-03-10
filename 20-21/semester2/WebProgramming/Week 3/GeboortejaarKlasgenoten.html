@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let namen = ["Thomas", "Bob", "Silke", "Bilal"]
+        let geboortejaren = ["2001", "2003", "2000", "1998"]
+
+        function getGeboortejaar(naam) {
+            let naamIndex = namen.indexOf(naam)
+            let geboortejaar = (geboortejaren[naamIndex]).toString()
+            return geboortejaar
+        }
+
+        let input = prompt("Geef een voornaam van een klasgenoot in: ")
+
+        alert("Geboren in " + getGeboortejaar(input))
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let toDo = []
+
+        function addItem(item) {
+            toDo.push(item)
+        }
+
+        function addPriority(item) {
+            toDo.unshift(item)
+        }
+
+        function firstElement() {
+            return toDo[0]
+        }
+
+        addItem("Huiswerk")
+        addItem("Kamer opruimen")
+        addPriority("Hond buiten laten")
+
+        for (i = 0; i < toDo.length; i++) {
+            console.log(toDo[i])
+        }
+
+    </script>
+
+</body>
+
+</html>
