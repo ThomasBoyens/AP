@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="div">
+        <h2>This is a heading in a div element</h2>
+        <p>This is some text in a div element.</p>
+    </div>
+    <button id="colorify">Change color</button>
+
+    <script>
+        
+
+        var colors = ["yellow", ""],   // the color choices
+            index = 0;                                     // index of the current color
+            
+        document.getElementById("colorify").onclick = function () {
+            var div = document.getElementsByTagName("div")
+            document.body.style.background = colors[index];  // set the color of the div to the current color
+            index = (index + 1) % colors.length;             // increment index to point to the next color (if it goes beyond the length of the coices array get it back to 0 using the modulo %)
+        }
+        
+
+    </script>
+
+</body>
+
+</html>

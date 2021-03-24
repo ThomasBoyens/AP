@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded",(event)=>{
+
+            const btnElement = document.getElementById("mybutton")
+            btnElement.addEventListener("click", () =>{
+
+                const elements = document.getElementsByTagName('td');
+                console.log(elements);
+                for (let index = 0; index < elements.length; index++) {
+                    const element = elements[index];
+                    console.log(element);
+                    if (element > 10) { // check of groter dan 10 werkt nog niet
+                        element.style.backgroundColor = "red";
+                    }
+                    
+                }
+
+            })
+        })
+
+
+    </script>
+
+    <table style="width:2%">
+        <tr>
+            <td>1</td>
+            <td>11</td>
+        </tr>
+        <tr>
+            <td>34</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>19</td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td>1</td>
+        </tr>
+    </table>
+
+
+    <button type="button" id="mybutton">Klik</button>
+
+    
+
+</body>
+
+</html>
