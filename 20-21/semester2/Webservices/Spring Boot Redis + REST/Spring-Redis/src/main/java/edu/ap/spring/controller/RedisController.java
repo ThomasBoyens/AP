@@ -3,6 +3,8 @@ package edu.ap.spring.controller;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.Set;
+
+import org.apache.juli.logging.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -28,6 +30,7 @@ public class RedisController {
         return "redirect:/messages";
     }
 
+    // get the page with a list of all messages
     @GetMapping("/messages")
     public String messages(Model model) {
         model.addAttribute("messages", redisMessages);
@@ -37,14 +40,16 @@ public class RedisController {
 
     // messaging
     public void onMessage(String message) {
-        this.redisMessages.add(message);
+        this.redisMessages.add(message); 
     }
 
+    // get the messaging page
     @GetMapping("/message")
     public String message() {
         return "messageForm";
     }
 
+    // send a new message
     @PostMapping("/message")
     public String saveMessage(@RequestParam("message") String message) {
 
@@ -53,6 +58,7 @@ public class RedisController {
         return "redirect:/messages";
     }
 
+    // get the page with a list of movies
     @GetMapping("/movies")
     public String movies(Model model) {
         
@@ -83,6 +89,12 @@ public class RedisController {
 
         return "movies";
 
+    }
+
+    // get the add movie page
+    @GetMapping("/addMovie")
+    public String addMovie() {
+        return "movieForm";
     }
 
 }

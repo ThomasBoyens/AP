@@ -8,21 +8,23 @@
     <title>Document</title>
 </head>
 
+<script>
+
+    document.addEventListener("DOMContentLoaded", (event) => {
+        document.getElementById("changeText").onclick = function () {
+            document.getElementById("ptag").innerHTML = "Veranderde tekst";
+        }
+    })
+
+
+</script>
+
 <body>
 
     <div class="div">
         <p id="ptag">This is some text in a div element.</p>
     </div>
     <button id="changeText">Change text</button>
-
-    <script>
-
-        document.getElementById("changeText").onclick = function () {
-            document.getElementById("ptag").innerHTML = "Veranderde tekst";
-        }
-
-
-    </script>
 
 </body>
 
