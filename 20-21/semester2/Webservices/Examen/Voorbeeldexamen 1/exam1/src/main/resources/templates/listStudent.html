@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th='http://www.thymeleaf.org'>
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
+    <script type='text/javascript' src='/js/app.js'></script>
+
+    <title>listStudent</title>
+</head>
+
+<body>
+    <div class='card card-body bg-light'>
+        <h1>Student List</h1>
+        <br/><br/>
+        <ul>
+            <li th:each="student:${students}" th:text="${student}">
+            </li>
+        </ul>		
+    </div>
+</body>
+</html>
+
