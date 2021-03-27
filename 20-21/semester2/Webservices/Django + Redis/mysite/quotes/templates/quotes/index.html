@@ -1,9 +1,0 @@
-<h1>Quotes quotes quotes !</h1>
-<br/>
-<ul>
-    {% for a in authors %}
-        <li><a href='{% url 'quotes:detail' a.author_id %}'>{{ a.author }}</a> : {{ a.author_bio }}</li>
-    {% endfor %}
-</ul>
-<br /><br />
-<a href='{% url 'quotes:search' %}'>Search</a>&nbsp&nbsp<a href='{% url 'quotes:add_author' %}'>Add Author</a>&nbsp&nbsp<a href='{% url 'quotes:random_quote' %}'>Get random quote</a>
