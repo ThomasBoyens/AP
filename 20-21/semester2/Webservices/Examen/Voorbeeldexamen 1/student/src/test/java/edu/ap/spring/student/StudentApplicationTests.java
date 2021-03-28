@@ -20,7 +20,7 @@ class StudentApplicationTests {
 	@BeforeAll
 	// must be static
 	public static void init() {
-		thomas = new AddStudentEntry("Boyens", "Thomas", new LocalDate(2001, 02, 26), "IT");
+		//thomas = new AddStudentEntry("Boyens", "Thomas", new LocalDate(2001, 02, 26), "IT");
 	}
 
 	@Test

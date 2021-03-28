@@ -39,6 +39,7 @@ public class RedisApplication {
 		return new MessageListenerAdapter(controller, "onMessage");
 	}
 
+	// wordt uitgevoerd bij opstarten applicatie voor test
 	@Bean
 	public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
 		return (args) -> {

@@ -1,0 +1,8 @@
+<h1>Search Quotes</h1>
+
+<form action='{% url 'quotes:search_results' %}' method='POST'>
+{% csrf_token %}
+<label for = 'search_term'>Your Search : </label>
+<input id='search_term' type='text' name='search_term''>
+<input type='submit' value='Search' />
+</form>

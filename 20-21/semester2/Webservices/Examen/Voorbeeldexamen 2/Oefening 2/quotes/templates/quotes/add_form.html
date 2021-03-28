@@ -1,0 +1,12 @@
+<h1>Add Quotes</h1>
+
+<form action='{% url 'quotes:add_results' %}' method='POST'>
+{% csrf_token %}
+<label for = 'author_name'>Author Name : </label>
+<input id='author_name' type='text' name='author_name'>
+<br /><br />
+<label for = 'author_bio'>Author Bio : </label>
+<input id='author_bio' type='text' name='author_bio'>
+<br /><br />
+<input type='submit' value='Add' />
+</form>
