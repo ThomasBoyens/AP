@@ -1,0 +1,9 @@
+<h1>Login</h1>
+<br/>
+<ul>
+   {% for u in users %}
+       <li>{{ u.user_email }}</a> :  {{ u.user_password }}</li>
+   {% endfor %}
+</ul>
+<br /><br />
+<a href='{% url 'login:signup' %}'>Sign up</a>
