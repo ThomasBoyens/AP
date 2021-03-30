@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas{
+            border:1px solid black
+        }
+    </style>
+
+    <script>
+
+class Bal{
+
+    constructor(x,y,straal,speedX,speedY){
+        this.x = x
+        this.y = y
+        this.straal = straal
+        this.speedX = speedX
+        this.speedY = speedY
+    }
+
+    move(){
+        this.x += this.speedX
+        this.y += this.speedY
+
+        if(this.x >= 500 || this.x <=0){
+            this.speedX = this.speedX * -1
+        }
+        if(this.y >= 500 || this.y <=0){
+            this.speedY = this.speedY * -1
+        }
+
+    }
+
+    draw(ctx){
+        ctx.beginPath()
+        ctx.arc(this.x,this.y,this.straal,0,Math.PI*2, true)
+        ctx.fill()
+    }
+}
+
+        document.addEventListener("DOMContentLoaded", (event) => {
+            let canvas = document.querySelector("canvas")
+            let ctx = canvas.getContext("2d")
+
+            bal1 = new Bal(10,20,20,4,3)
+
+            function Animate(){
+
+                //CLEAR
+                ctx.clearRect(0,0,500,500)
+
+                //UPDATE
+                bal1.move()
+
+                //DRAW
+                bal1.draw(ctx)
+
+                setTimeout(Animate,33)
+            }
+
+            Animate()
+
+        })
+
+
+
+    </script>
+</head>
+
+<body>
+
+    <canvas width="500" height="500"></canvas>
+
+</body>
+
+</html>

@@ -20,51 +20,43 @@
 
     <script>
 
-        document.addEventListener("DOMContentLoaded",(event)=>{
-
-            const btnElement = document.getElementById("mybutton")
-            btnElement.addEventListener("click", () =>{
-
-                const elements = document.getElementsByTagName('td');
-                console.log(elements);
-                for (let index = 0; index < elements.length; index++) {
-                    const element = elements[index];
-                    console.log(element);
-                    if (element > 10) { // check of groter dan 10 werkt nog niet
-                        element.style.backgroundColor = "red";
-                    }
-                    
+        function changeTable() {
+            // Get the numbers
+            let cells = document.querySelectorAll("#exercise4 td");
+            for (let i = 0; i < cells.length; i++) {
+                if (cells[i].innerText > 10) {
+                    cells[i].style.backgroundColor = "red";
                 }
-
-            })
-        })
+            }
+        }
 
 
     </script>
 
-    <table style="width:2%">
-        <tr>
-            <td>1</td>
-            <td>11</td>
-        </tr>
-        <tr>
-            <td>34</td>
-            <td>7</td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>19</td>
-        </tr>
-        <tr>
-            <td>12</td>
-            <td>1</td>
-        </tr>
-    </table>
+    <div id="exercise4">
+        <table>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>11</td>
+                </tr>
+                <tr>
+                    <td>34</td>
+                    <td>7</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>19</td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>1</td>
+                </tr>
+            </tbody>
+        </table>
+        <button onclick="changeTable()">Klik</button>
+    </div>
 
-
-    <button type="button" id="mybutton">Klik</button>
-
-    
 
 </body>
 

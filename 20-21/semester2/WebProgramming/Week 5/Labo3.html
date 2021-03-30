@@ -1,0 +1,99 @@
+
+<!-- saved from url=(0100)https://learning.ap.be/pluginfile.php/1305758/mod_resource/content/3/oplossing_DomBrowser_basic.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Labo3</title></head>
+  <body>
+    <div id="containerThatChangesColor" style="background-color: yellow;">
+      1
+    </div>
+    <button onclick="changeButton()">Verander</button>
+
+    <div id="containerThatChangesText">Hier staat iets</div>
+    <button onclick="changeButton2()">Verander2</button>
+
+    <div id="exercise3">
+      <div id="oef3-1">
+        1
+      </div>
+      <div id="oef3-2">
+        2
+      </div>
+      <div id="oef3-3"> 
+        3
+      </div>
+      <button onclick="changeButton3()">Verander3</button>
+    </div>
+    
+
+
+    <div id="exercise4">
+      <table>
+        <tbody><tr>
+          <td>1</td><td style="background-color: red;">11</td>
+        </tr>
+        <tr>
+          <td style="background-color: red;">34</td> <td>7</td>
+        </tr>
+        <tr>
+          <td>1</td> <td style="background-color: red;">19</td>
+        </tr>
+        <tr>
+          <td style="background-color: red;">12</td> <td>1</td>
+        </tr>
+      </tbody></table>
+      <button onclick="changeTable()">Klik</button>
+    </div>
+
+    <script type="text/javascript">
+      let tellerOefening3 = 0;
+      function changeButton() {
+        // Get the div
+        let container = document.getElementById("containerThatChangesColor");
+
+        // Change the color
+        container.style.backgroundColor = (container.style.backgroundColor == "yellow") ? "" : "yellow";
+      }
+
+      function changeButton2() {
+        // Get the div
+        let container = document.getElementById("containerThatChangesText");
+
+        // Change the text
+        container.innerText = "Verander";
+      }
+
+      function changeButton3()
+      {
+        tellerOefening3++;
+        if(tellerOefening3 > 3){
+          tellerOefening3 = 1;
+        }
+        for (let index = 1; index <= 4; index++) {
+          let idToGet = "oef3-"+index;
+          let element = document.getElementById(idToGet);
+          if(element.style.backgroundColor == "yellow")
+          {
+            element.style.backgroundColor = "";
+          }
+          if(tellerOefening3 == index)
+          {
+            element.style.backgroundColor = "yellow";
+          }
+        }
+        
+      }
+
+      function changeTable() {
+        // Get the numbers
+        let cells = document.querySelectorAll("#exercise4 td");
+        for (let i = 0; i < cells.length; i++) {
+          if (cells[i].innerText > 10) {
+            cells[i].style.backgroundColor = "red";
+          }
+        }
+      }
+
+      
+    </script>
+  
+
+</body></html>

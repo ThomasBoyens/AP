@@ -11,55 +11,40 @@
 <body>
 
     <script>
+        let tellerOefening3 = 0;
 
-        document.addEventListener("DOMContentLoaded", (event) => {
-            let div1 = document.getElementById("div1")
-            let div2 = document.getElementById("div2")
-            let div3 = document.getElementById("div3")
-            
-            document.getElementById("submit").addEventListener("click", (event) => {
+        function changeButton3() {
+            tellerOefening3++;
+            if (tellerOefening3 > 3) {
+                tellerOefening3 = 1;
+            }
+            for (let index = 1; index <= 4; index++) {
+                let idToGet = "oef3-" + index;
+                let element = document.getElementById(idToGet);
+                if (element.style.backgroundColor == "yellow") {
+                    element.style.backgroundColor = "";
+                }
+                if (tellerOefening3 == index) {
+                    element.style.backgroundColor = "yellow";
+                }
+            }
 
-
-                console.log(div1)
-                console.log(div2)
-                console.log(div3)
-
-
-
-                /*if (divOne.style.backgroundColor == null && divTwo.style.backgroundColor == null && divThree.style.backgroundColor == null) {
-                    divOne.style.backgroundColor = "yellow";
-                    
-
-                } else if (divOne.style.backgroundColor == "yellow") {
-                    divOne.style.backgroundColor = null;
-                    divTwo.style.backgroundColor = "yellow";
-                    divThree.style.backgroundColor = null;
-
-                } else if (divTwo.style.backgroundColor == "yellow") {
-                    divOne.style.backgroundColor = null;
-                    divTwo.style.backgroundColor = null;
-                    divThree.style.backgroundColor = "yellow";
-
-                } else if (divThree.style.backgroundColor == "yellow") {
-                    divOne.style.backgroundColor = "yellow";
-                    divTwo.style.backgroundColor = null;
-                    divThree.style.backgroundColor = null;
-                }*/
-            })
-        })
+        }
 
     </script>
 
-    <div id="div1">
-        <p>1</p>
+    <div id="exercise3">
+        <div id="oef3-1">
+            1
+        </div>
+        <div id="oef3-2">
+            2
+        </div>
+        <div id="oef3-3">
+            3
+        </div>
+        <button onclick="changeButton3()">Verander3</button>
     </div>
-    <div id="div2">
-        <p>2</p>
-    </div>
-    <div id="div3">
-        <p>3</p>
-    </div>
-    <button id="submit" type="button" value="Change color">Change color</button>
 
 
 
