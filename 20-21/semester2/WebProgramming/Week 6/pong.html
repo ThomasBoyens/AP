@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas {
+            border: 1px solid black
+        }
+    </style>
+
+<body>
+    <canvas width="700" height="500">
+
+        <script type="text/javascript">
+
+            document.addEventListener("DOMContentLoaded", (event) => {
+                let canvas = document.querySelector("canvas")
+                let ctx = canvas.getContext("2d")
+
+                let state = {
+                    leftPaddleTopY: 0,
+                    rightPaddleTopY: 0,
+                    ballX: 250,
+                    ballY: 150,
+                    directionBallX: 1, // Random waarde tussen -1 en 1
+                    directionBallY: 1, // Random waarde tussen -1 en 1
+                    speed: 2,
+                    ganeOver: false,
+                };
+
+                canvas.addEventListener("mousemove", function (event) {
+                    state.leftPaddleTopY = event.clientY;
+                });
+
+                function clear() {
+                    ctx.clearRect(0, 0, 700, 500)
+                }
+
+                function paddleHit() {
+                    return state.ballY > state.leftPaddleTopY && state.ballY < state.leftPaddleTopY + 50;
+                }
+
+                function updateAnimationState() {
+                    // Check lost
+                    if (state.ballX < 0) {
+                        state.gameOver = true;
+                    }
+
+                    // Update ball direction
+                    if (state.ballX > 640) {
+                        state.directionBallX = -1;
+                        state.speed *= 1.1;
+                    } else if (state.ballX < 60) {
+                        if (paddleHit()) {
+                            state.directionBallX = 1;
+                            state.speed *= 1.1;
+                        }
+                    }
+
+                    if (state.ballY > 500) {
+                        state.directionBallY = -1;
+                    } else if (state.ballY < 0) {
+                        state.directionBallY = 1;
+                    }
+
+                    // Update ball coordinates
+                    state.ballX += state.directionBallX * state.speed;
+                    state.ballY += state.directionBallY * state.speed;
+
+                    // Make perfect AI for right paddle
+                    state.rightPaddleTopY = state.ballY - 25;
+                }
+
+                function draw() {
+                    // Ball
+                    ctx.beginPath();
+                    ctx.arc(state.ballX, state.ballY, 10, 0, 2 * Math.PI, false);
+                    ctx.fill();
+                    ctx.closePath();
+
+                    // Left paddle
+                    ctx.rect(30, state.leftPaddleTopY, 15, 80);
+                    ctx.fill();
+
+                    // Right paddle
+                    ctx.rect(650, state.rightPaddleTopY, 15, 80);
+                    ctx.fill();
+
+                    if (state.gameOver) {
+                        ctx.fillText("Game over", 310, 250);
+                    }
+                }
+
+                function animate() {
+
+                    clear()
+                    updateAnimationState()
+                    draw()
+
+                    requestAnimationFrame(animate);
+                }
+                animate()
+            })
+
+        </script>
+        </head>
+
+</body>
+
+</html>
