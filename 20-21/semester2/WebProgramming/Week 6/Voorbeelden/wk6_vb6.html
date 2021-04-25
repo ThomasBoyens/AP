@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        document.addEventListener("DOMContentLoaded",(event)=>{
+            let canvas = document.querySelector("canvas")
+            let context = canvas.getContext("2d")
+
+            let positieX = 0;
+            let positieY = 0;
+
+            function Animate(){
+                // clear
+                context.clearRect(0,0,500,500)
+
+                //update
+                positieX++
+                positieY++
+
+                //draw
+                context.beginPath()
+                context.arc(positieX,positieY,20,0,Math.PI*2,false)
+                context.fill()
+
+                //loop agaoin
+                setTimeout(Animate,33)
+            }
+
+            Animate()
+
+        })
+    </script>
+</head>
+<body>
+    <canvas width="500" height="500"></canvas>
+    
+</body>
+</html>  

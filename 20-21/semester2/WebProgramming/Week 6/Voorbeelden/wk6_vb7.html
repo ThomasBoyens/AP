@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        document.addEventListener("DOMContentLoaded",(event)=>{
+            let canvas = document.querySelector("canvas")
+            let context = canvas.getContext("2d")
+
+            let graden = 0;
+
+            function Animate(){
+                let currentTime = new Date()
+                // clear
+                context.clearRect(0,0,500,500)
+
+                //update
+                graden++
+                context.save()
+                context.translate(100,100)
+                context.rotate(currentTime.getSeconds()*6*Math.PI/180) //x6 want je mapt dit naar 360°
+                context.strokeStyle = "green"
+
+                //draw secondewijzer
+                context.beginPath()
+                context.moveTo(0,0)
+                context.lineTo(0,-50)
+                context.stroke()
+                context.restore()
+                //draw uurwerk border
+                context.beginPath()
+                context.arc(100,100,100,0,Math.PI*2,false)
+                context.stroke()
+
+                //loop agaoin
+                setTimeout(Animate,33)
+            }
+
+            Animate()
+
+        })
+    </script>
+</head>
+<body>
+    <canvas width="500" height="500"></canvas>
+    
+</body>
+</html>  

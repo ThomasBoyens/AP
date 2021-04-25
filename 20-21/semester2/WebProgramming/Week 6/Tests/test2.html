@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+            let canvas = document.querySelector("canvas")
+            let ctx = canvas.getContext("2d")
+            
+            ctx.save()
+            ctx.translate(100,100)
+            ctx.beginPath()
+            ctx.moveTo(0,0)
+            ctx.rotate(-45*Math.PI/180)
+            ctx.lineTo(0,200)
+            ctx.stroke()
+            ctx.restore()
+
+            ctx.fillRect(400,400,10,10)
+
+        })
+
+
+
+    </script>
+</head>
+
+<body>
+
+    <canvas width="500" height="500"></canvas>
+
+</body>
+
+</html>

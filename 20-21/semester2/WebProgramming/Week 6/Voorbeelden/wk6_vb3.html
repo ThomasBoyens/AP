@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        document.addEventListener("DOMContentLoaded",(event)=>{
+            let canvas = document.querySelector("canvas")
+            let context = canvas.getContext("2d")
+            let hasMouseClicked = false;
+
+            document.addEventListener("mousedown",(mouseDown)=>{
+                hasMouseClicked = true
+                context.beginPath()
+            })
+
+            document.addEventListener("mouseup",(mouseDown)=>{
+                hasMouseClicked = false
+
+            })
+
+            document.addEventListener("mousemove",(mouseEvent)=>{
+                if(hasMouseClicked){
+                    context.lineTo(mouseEvent.pageX,mouseEvent.pageY)
+                    context.stroke()
+
+                }
+            })
+            
+           
+
+        })
+    </script>
+</head>
+<body>
+    <canvas width="500" height="500"></canvas>
+    
+</body>
+</html>  

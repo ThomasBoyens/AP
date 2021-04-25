@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        class Figuur{
+            constructor(x,y,w,h,f){
+                this.x = x
+                this.y = y
+                this.width = w
+                this.height = h
+                this.force = f
+            }
+
+            Move(){
+                this.x+=this.force
+               // this.y++
+            }
+
+            Draw(context){
+                context.fillRect(this.x,this.y,this.width,this.height)
+            }
+        }
+
+       
+
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded",(event)=>{
+            let canvas = document.querySelector("canvas")
+            let context = canvas.getContext("2d")
+            let fig1 =new Figuur(100,0,20,20,1)
+            let fig2 = new Figuur(500,0,20,20,-1)
+            function Animate(){
+               
+                // clear
+                context.clearRect(0,0,500,500)
+
+                //update
+                fig1.Move(1)
+                fig2.Move(-1)
+                if(Collide(fig1,fig2)){
+                    alert()
+                    fig1.force*=-1
+                    fig2.force*=-1
+                }
+                //draw
+                fig1.Draw(context)
+                fig2.Draw(context)
+
+                //loop agaoin
+                setTimeout(Animate,33)
+            }
+
+            function Collide(obj1, obj2){
+
+                if( (obj1.x+obj1.width) >= obj2.x && (obj2.x+obj2.width) >= obj1.x ){
+                   console.log(obj1.y + obj1.height)
+                   console.log(obj2.y)
+                   return true
+                   /* if( (obj1.y + obj1.height) <= obj2.y && (obj2.y+obj2.height <= obj1.y) ){
+                        return true
+                    }*/
+                        
+                
+                }
+                return false
+            }
+
+            Animate()
+
+        })
+    </script>
+</head>
+<body>
+    <canvas width="500" height="500"></canvas>
+    
+</body>
+</html>  

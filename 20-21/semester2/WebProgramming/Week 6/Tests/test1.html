@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+            let canvas = document.querySelector("canvas")
+            let ctx = canvas.getContext("2d")
+            let x=50
+            let y=50
+
+            function Animate(){
+
+            //clear
+
+            ctx.clearRect(0,0,500,500)
+
+            //update
+            x++
+            y++
+
+            //draw
+            ctx.fillRect(x,y,30,30)
+
+            setTimeout(Animate,33)
+
+            }
+
+            Animate()
+
+        })
+
+
+
+    </script>
+</head>
+
+<body>
+
+    <canvas width="500" height="500"></canvas>
+
+</body>
+
+</html>

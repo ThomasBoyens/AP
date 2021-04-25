@@ -1,0 +1,134 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>DogeCatcher</title>
+</head>
+
+<body>
+    <canvas id="pongCanvas" width="700" height="500" style="border:1px solid black;">
+
+        <script>
+
+            class Bal {
+                constructor(x, y, d, f) {
+                    this.x = x
+                    this.y = y
+                    this.diameter = d
+
+                    this.force = f
+                }
+
+                get straal() {
+                    return this.diameter / 2
+                }
+
+                Move(){
+                this.y+=this.force
+               // this.x++
+            }
+
+                Draw(ctx) {
+
+                    ctx.beginPath()
+                    ctx.arc(this.x, this.y, this.diameter, 0, Math.PI * 2, false)
+                    ctx.fillStyle = "red"
+                    console.log(this.x)
+                    ctx.fill()
+                }
+
+                CheckEdges() {
+                    if (this.x >= 700 || this.x <= 0)
+                        this.forceX *= -1
+                    if (this.y >= 500 || this.y <= 0)
+                        this.forceY *= -1
+                }
+            }
+
+            class Character {
+
+                constructor(y) {
+                    this.x = 50
+                    this.y = y
+
+                }
+
+                Draw() {
+                    ctx.rect(this.x, this.y, 50, 20);
+                    ctx.fillStyle = "red"
+                    ctx.fill();
+
+                }
+            }
+                let canvas = document.getElementById("pongCanvas");
+                let ctx = canvas.getContext("2d");
+                let character = new Character(350)
+
+                const ballen = []
+                const aantal = 10
+                let teller = 0
+                CreateBallen(aantal)
+
+                function Animate() {
+
+                    // clear
+                    ctx.clearRect(0, 0, 700, 500)
+
+                    for (let i = 0; i < aantal; i++) {
+                        // update
+                        ballen[i].Move()
+                        ballen[i].CheckEdges()
+                        for (let j = i + 1; j < aantal; j++)
+                            //Collide(ballen[i], ballen[j])
+                        //draw
+                        ballen[i].Draw(ctx)
+                    }
+
+                    character.Draw()
+
+                    setTimeout(Animate, 33)
+                }
+
+                /*function Collide(obj1, obj2) {
+
+                    const dX = obj1.x - obj2.x
+                    const dY = obj1.y - obj2.y
+                    const afstand = Math.sqrt(dX * dX + dY * dY)
+                    if (afstand < (obj1.straal + obj2.straal)) 
+                    {
+                        obj1.forceX *= -1
+                        obj2.forceX *= -1
+                    }
+                }*/
+
+                function CreateBallen(aantal) {
+                    for (let i = 0; i < aantal; i++) {
+                        ballen.push(new Bal(CreateRandom(700), 0, 10, CreateRandom(2) + 1))
+                    }
+                }
+
+                function CreateRandom(maxPositie) {
+
+                    let pos = Math.round(Math.random() * maxPositie)
+                    console.log(pos)
+                    return pos
+                }
+
+
+                canvas.addEventListener("mousemove", function (event) {
+                    character.x = event.clientX;
+                });
+
+                function clear() {
+                    ctx.clearRect(0, 0, 700, 500);
+                }
+
+                Animate();
+
+        </script>
+
+
+    </canvas>
+</body>
+
+</html>

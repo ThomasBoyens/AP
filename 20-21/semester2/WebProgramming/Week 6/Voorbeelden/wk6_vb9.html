@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        class Bal{
+            constructor(x,y,d,f){
+                this.x = x
+                this.y = y
+                this.diameter = d
+              
+                this.force = f
+            }
+
+            get straal(){
+                return this.diameter/2
+            }
+
+            Move(){
+                this.y+=this.force
+               // this.x++
+            }
+
+            Draw(context){
+               
+                context.beginPath()
+                context.arc(this.x,this.y,this.diameter,0,Math.PI*2,false)
+                context.fillStyle="red"
+                console.log(this.x)
+                context.fill()
+            }
+
+            CheckEdges(){
+                if(this.x >=500 || this.x<=0)
+                    this.forceX*=-1
+                if(this.y >=500 || this.y <=0)
+                    this.forceY*=-1
+            }
+        }
+
+       
+
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded",(event)=>{
+            let canvas = document.querySelector("canvas")
+            let context = canvas.getContext("2d")
+            
+            const ballen = []
+            const aantal = 10
+            CreateBallen(aantal)
+            
+            function Animate(){
+               
+                // clear
+                context.clearRect(0,0,500,500)
+
+                
+               for(let i = 0; i<aantal; i++){
+                   //update
+                   ballen[i].Move()
+                   ballen[i].CheckEdges()
+                   for(let j = i+1; j < aantal;j++)
+                    //Collide(ballen[i],ballen[j])
+                   //draw
+                   ballen[i].Draw(context)
+               }
+                  
+              
+
+                //loop agaoin
+                setTimeout(Animate,33)
+            }
+
+            /*function Collide(obj1, obj2){
+
+                const dX = obj1.x - obj2.x
+                const dY = obj1.y - obj2.y
+                const afstand = Math.sqrt(dX*dX + dY*dY)
+                if(afstand < (obj1.straal + obj2.straal))
+                {
+                    obj1.forceX *=-1
+                    obj2.forceX *=-1
+                }
+            }*/
+
+            function CreateBallen(aantal){
+                for(let i = 0; i<aantal; i++){
+                    ballen.push(new Bal(CreateRandom(700),0,10,CreateRandom(2)+1))
+                }
+            }
+
+            function CreateRandom(maxPositie){
+               
+                let pos = Math.round(Math.random()*maxPositie)
+                console.log(pos)
+                return pos
+            }
+
+            Animate()
+
+        })
+    </script>
+</head>
+<body>
+    <canvas width="500" height="500"></canvas>
+    
+</body>
+</html>  
