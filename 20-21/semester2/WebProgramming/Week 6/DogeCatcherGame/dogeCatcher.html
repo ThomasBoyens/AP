@@ -6,42 +6,28 @@
 </head>
 
 <body>
-    <canvas id="pongCanvas" width="700" height="500" style="border:1px solid black;">
+    <canvas id="dogeCatcherCanvas" width="700" height="500" style="border:1px solid black;">
 
         <script>
 
-            class Bal {
-                constructor(x, y, d, f) {
+            class Item {
+                constructor(x, y, r, s) {
                     this.x = x
                     this.y = y
-                    this.diameter = d
-
-                    this.force = f
+                    this.radius = r
+                    this.speedY = s
                 }
 
-                get straal() {
-                    return this.diameter / 2
-                }
+                Move() {
+                    this.y += this.speedY
 
-                Move(){
-                this.y+=this.force
-               // this.x++
-            }
+                }
 
                 Draw(ctx) {
 
                     ctx.beginPath()
-                    ctx.arc(this.x, this.y, this.diameter, 0, Math.PI * 2, false)
-                    ctx.fillStyle = "red"
-                    console.log(this.x)
+                    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false)
                     ctx.fill()
-                }
-
-                CheckEdges() {
-                    if (this.x >= 700 || this.x <= 0)
-                        this.forceX *= -1
-                    if (this.y >= 500 || this.y <= 0)
-                        this.forceY *= -1
                 }
             }
 
@@ -55,75 +41,83 @@
 
                 Draw() {
                     ctx.rect(this.x, this.y, 50, 20);
-                    ctx.fillStyle = "red"
                     ctx.fill();
 
                 }
             }
-                let canvas = document.getElementById("pongCanvas");
-                let ctx = canvas.getContext("2d");
-                let character = new Character(350)
 
-                const ballen = []
-                const aantal = 10
-                let teller = 0
-                CreateBallen(aantal)
+            let canvas = document.getElementById("dogeCatcherCanvas");
+            let ctx = canvas.getContext("2d");
+            let character = new Character(350)
 
-                function Animate() {
+            const items = []
+            const number = 10
+            let counter = 0
 
-                    // clear
-                    ctx.clearRect(0, 0, 700, 500)
+            CreateItems(number)
 
-                    for (let i = 0; i < aantal; i++) {
-                        // update
-                        ballen[i].Move()
-                        ballen[i].CheckEdges()
-                        for (let j = i + 1; j < aantal; j++)
-                            //Collide(ballen[i], ballen[j])
-                        //draw
-                        ballen[i].Draw(ctx)
+            function Animate() {
+
+                // clear
+                ctx.clearRect(0, 0, 700, 500)
+
+                for (let i = 0; i < number; i++) {
+                    // update
+                    items[i].Move()
+
+                    // check if circle and rect collide
+                    let collision = RectCircleColliding(items[i], character)
+                    console.log(collision)
+                    if (collision) {
+                        item.x = randomInt(20, 680)
+                        item.y = 0
                     }
-
-                    character.Draw()
-
-                    setTimeout(Animate, 33)
+                    //draw
+                    items[i].Draw(ctx)
                 }
 
-                /*function Collide(obj1, obj2) {
+                character.Draw()
 
-                    const dX = obj1.x - obj2.x
-                    const dY = obj1.y - obj2.y
-                    const afstand = Math.sqrt(dX * dX + dY * dY)
-                    if (afstand < (obj1.straal + obj2.straal)) 
-                    {
-                        obj1.forceX *= -1
-                        obj2.forceX *= -1
-                    }
-                }*/
+                setTimeout(Animate, 33)
+            }
 
-                function CreateBallen(aantal) {
-                    for (let i = 0; i < aantal; i++) {
-                        ballen.push(new Bal(CreateRandom(700), 0, 10, CreateRandom(2) + 1))
-                    }
+            function RectCircleColliding(circle, rect) {
+                var distX = Math.abs(circle.x - rect.x - rect.w / 2);
+                var distY = Math.abs(circle.y - rect.y - rect.h / 2);
+
+                if (distX > (rect.w / 2 + circle.r)) { return false; }
+                if (distY > (rect.h / 2 + circle.r)) { return false; }
+
+                if (distX <= (rect.w / 2)) { return true; }
+                if (distY <= (rect.h / 2)) { return true; }
+
+                var dx = distX - rect.w / 2;
+                var dy = distY - rect.h / 2;
+                return (dx * dx + dy * dy <= (circle.r * circle.r));
+            }
+
+            function CreateItems(number) {
+                for (let i = 0; i < number; i++) {
+                    items.push(new Item(CreateRandom(700), 0, 10, CreateRandom(4) + 2))
                 }
+            }
 
-                function CreateRandom(maxPositie) {
+            function CreateRandom(maxPositie) {
 
-                    let pos = Math.round(Math.random() * maxPositie)
-                    console.log(pos)
-                    return pos
-                }
+                let pos = Math.random() * maxPositie
+                return pos
+            }
 
 
-                canvas.addEventListener("mousemove", function (event) {
-                    character.x = event.clientX;
-                });
+            canvas.addEventListener("mousemove", function (event) {
+                character.x = event.clientX;
+            });
 
-                function clear() {
-                    ctx.clearRect(0, 0, 700, 500);
-                }
+            function clear() {
+                ctx.clearRect(0, 0, 700, 500);
+            }
 
-                Animate();
+            Animate();
 
         </script>
 

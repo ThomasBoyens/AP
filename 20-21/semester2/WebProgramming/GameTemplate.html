@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game!</title>
+
+    <style>
+        canvas{
+            border: 1px solid black;
+        }
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+            let canvas = document.querySelector("canvas")
+            let ctx = canvas.getContext("2d")
+
+            function CheckCollisionCircleRectangle(rect, circle){
+                var distX = Math.abs(circle.x - rect.x-rect.width/2)
+                var distY = Math.abs(circle.y - rect.y-rect.height/2)
+
+                if(distX > (rect.width/2 + circle.radius)) { return false }
+                if(distY > (rect.height/2 + circle.radius)) { return false }
+
+                if (distX <= (rect.width/2)) { return true } 
+                if (distY <= (rect.height/2)) { return true }
+
+                var dx= distX- rect.width/2
+                var dy= distY- rect.height/2
+                return (dx*dx+dy*dy<=(circle.radius * circle.radius))
+            }
+
+            function GameLoop(){
+                // CLEAR
+                ctx.clearRect(0, 0, 500, 500)
+
+                // UPDATE
+
+                // DRAW
+
+                setTimeout(GameLoop, 22)
+            }
+            GameLoop()
+        })
+    </script>
+</head>
+
+<body>
+    <canvas width="500" height="500"></canvas>
+</body>
+</html>
