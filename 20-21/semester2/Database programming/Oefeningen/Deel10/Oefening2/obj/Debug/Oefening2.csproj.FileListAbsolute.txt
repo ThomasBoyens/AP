@@ -1,0 +1,10 @@
+C:\Users\thoma\Documents\AP\20-21\semester2\Database programming\Oefeningen\Deel10\Oefening2\bin\Debug\Oefening2.exe.config
+C:\Users\thoma\Documents\AP\20-21\semester2\Database programming\Oefeningen\Deel10\Oefening2\bin\Debug\Oefening2.exe
+C:\Users\thoma\Documents\AP\20-21\semester2\Database programming\Oefeningen\Deel10\Oefening2\bin\Debug\Oefening2.pdb
+C:\Users\thoma\Documents\AP\20-21\semester2\Database programming\Oefeningen\Deel10\Oefening2\obj\Debug\Oefening2.csprojAssemblyReference.cache
+C:\Users\thoma\Documents\AP\20-21\semester2\Database programming\Oefeningen\Deel10\Oefening2\obj\Debug\Oefening2.FormGames.resources
+C:\Users\thoma\Documents\AP\20-21\semester2\Database programming\Oefeningen\Deel10\Oefening2\obj\Debug\Oefening2.Properties.Resources.resources
+C:\Users\thoma\Documents\AP\20-21\semester2\Database programming\Oefeningen\Deel10\Oefening2\obj\Debug\Oefening2.csproj.GenerateResource.cache
+C:\Users\thoma\Documents\AP\20-21\semester2\Database programming\Oefeningen\Deel10\Oefening2\obj\Debug\Oefening2.csproj.CoreCompileInputs.cache
+C:\Users\thoma\Documents\AP\20-21\semester2\Database programming\Oefeningen\Deel10\Oefening2\obj\Debug\Oefening2.exe
+C:\Users\thoma\Documents\AP\20-21\semester2\Database programming\Oefeningen\Deel10\Oefening2\obj\Debug\Oefening2.pdb
