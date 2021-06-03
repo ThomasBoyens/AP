@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<script>
+
+document.addEventListener("DOMContentLoaded",(arg)=>{
+
+    // Maak een XMLHttpRequest object aan
+    let request = new XMLHttpRequest()
+
+        //Open connectie naar het endpoint
+        request.open("GET","http://localhost:8080/trips")
+
+        //vang de response van het endpoint op, en plaats het resultaat ergens in je HTML bestand
+        request.onload = ()=>{
+            let response = request.response
+            // response = een string
+            console.log(response)
+
+            // serialiseren door JSON.parse
+            let jsonData = JSON.parse(response)
+            console.log(jsonData) // log json array in zen geheel
+
+            for (let i = 0; i < jsonData.length; i++) {
+                console.log(jsonData[i]) // log object per object
+                document.querySelector("p").innerHTML += jsonData[i].id + ". " + jsonData[i].naam + "<br/>"
+            }
+        }
+
+        //Voer de request uit
+        request.send()
+})
+
+</script>
+
+</head>
+<body>
+    <p>
+
+    </p>
+</body>
+</html>
