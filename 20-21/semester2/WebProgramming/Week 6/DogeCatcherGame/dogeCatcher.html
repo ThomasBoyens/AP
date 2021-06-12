@@ -7,6 +7,7 @@
 
 <body>
     <canvas id="dogeCatcherCanvas" width="700" height="500" style="border:1px solid black;">
+        <img src="Dogecoin.png" id="coin">
 
         <script>
 
@@ -23,7 +24,7 @@
 
                 }
 
-                Draw(ctx) {
+                Draw(ctx) { 
 
                     ctx.beginPath()
                     ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false)
