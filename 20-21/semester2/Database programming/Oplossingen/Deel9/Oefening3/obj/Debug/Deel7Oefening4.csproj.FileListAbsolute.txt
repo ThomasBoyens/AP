@@ -1,9 +1,0 @@
-D:\Temp\C#\Deel7\Deel7Oefening4\bin\Debug\Deel7Oefening4.exe.config
-D:\Temp\C#\Deel7\Deel7Oefening4\bin\Debug\Deel7Oefening4.exe
-D:\Temp\C#\Deel7\Deel7Oefening4\bin\Debug\Deel7Oefening4.pdb
-D:\Temp\C#\Deel7\Deel7Oefening4\obj\Debug\Deel7Oefening4.Form1.resources
-D:\Temp\C#\Deel7\Deel7Oefening4\obj\Debug\Deel7Oefening4.Properties.Resources.resources
-D:\Temp\C#\Deel7\Deel7Oefening4\obj\Debug\Deel7Oefening4.csproj.GenerateResource.Cache
-D:\Temp\C#\Deel7\Deel7Oefening4\obj\Debug\Deel7Oefening4.exe
-D:\Temp\C#\Deel7\Deel7Oefening4\obj\Debug\Deel7Oefening4.pdb
-D:\Temp\C#\Deel7\Deel7Oefening4\obj\Debug\Deel7Oefening4.csprojResolveAssemblyReference.cache

@@ -1,5 +1,0 @@
-C:\Users\thoma\Documents\AP\20-21\semester2\Database programming\Oefeningen\Deel11\Oefening2\bin\Debug\Oefening2.dacpac
-C:\Users\thoma\Documents\AP\20-21\semester2\Database programming\Oefeningen\Deel11\Oefening2\bin\Debug\Oefening2.dll
-C:\Users\thoma\Documents\AP\20-21\semester2\Database programming\Oefeningen\Deel11\Oefening2\bin\Debug\Oefening2.pdb
-C:\Users\thoma\Documents\AP\20-21\semester2\Database programming\Oefeningen\Deel11\Oefening2\obj\Debug\Oefening2.dll
-C:\Users\thoma\Documents\AP\20-21\semester2\Database programming\Oefeningen\Deel11\Oefening2\obj\Debug\Oefening2.pdb

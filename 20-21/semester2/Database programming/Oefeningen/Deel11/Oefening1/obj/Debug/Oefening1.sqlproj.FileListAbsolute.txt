@@ -1,6 +1,0 @@
-C:\Users\thoma\Documents\AP\20-21\semester2\Database programming\Oefeningen\Deel11\Oefening1\bin\Debug\Oefening1.dacpac
-C:\Users\thoma\Documents\AP\20-21\semester2\Database programming\Oefeningen\Deel11\Oefening1\bin\Debug\Oefening1.dll
-C:\Users\thoma\Documents\AP\20-21\semester2\Database programming\Oefeningen\Deel11\Oefening1\bin\Debug\Oefening1.pdb
-C:\Users\thoma\Documents\AP\20-21\semester2\Database programming\Oefeningen\Deel11\Oefening1\obj\Debug\Oefening1.sqlprojAssemblyReference.cache
-C:\Users\thoma\Documents\AP\20-21\semester2\Database programming\Oefeningen\Deel11\Oefening1\obj\Debug\Oefening1.dll
-C:\Users\thoma\Documents\AP\20-21\semester2\Database programming\Oefeningen\Deel11\Oefening1\obj\Debug\Oefening1.pdb
