@@ -1,12 +1,23 @@
 class User {
 
-    constructor(naam,voornaam){
-        this.voornaam = voornaam
-        this.naam = naam
+    constructor(){
+        this._naam="";
+        this._voornaam = "";
+      
     }
 
-    print(){
-        console.log(this.voornaam + " " + this.naam)
+    get naam(){
+        return this._naam;
+    }
+    set naam(value){
+        this._naam = value;
+    }
+
+    get voornaam(){
+        return this._voornaam;
+    }
+    set voornaam(value){
+        this._voornaam = value;
     }
 }
 

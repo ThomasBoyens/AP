@@ -8,7 +8,7 @@ app.use(bp.json());
 
 app.use("/trips",trips)
 
-app.get("/",(req,res)=>{
+/*app.get("/",(req,res)=>{
     res.sendFile(__dirname + '/www/index.html')
 })
 
@@ -24,7 +24,7 @@ app.get("/trips/kosten/:id", (req, res) => {
         }
     }
     res.send("totaal: " + totaal)
-})
+})*/
 
 
 app.listen(8080, () => console.log('Server ready'))

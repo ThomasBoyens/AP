@@ -10,16 +10,6 @@ let trips = []
 trips.push({ "id": 1, "naam":"Ardennen", "kosten": [] })
 trips.push({ "id": 2, "naam":"Zee", "kosten": [] })
 
-function calculateTotalkosten(trips) {
-  let totalkosten = 0
-  let kosten = trips.kosten
-
-  for (let i = 0; i < kosten.length; i++) {
-    totalkosten += taxes[i].amount
-  } 
-  return totalkosten
-}
-
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/Client/j.html');
 })
