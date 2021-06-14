@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vierkanten</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="vierkantCanvas" width="700" height="500">
+
+        <script type="text/javascript">
+            class Vierkant {
+                constructor(x, y, xsnelheid, zijde) {
+                    this.x = x
+                    this.y = y
+                    this.xSnelheid = xsnelheid
+                    this.xRichting = 2
+                    this.zijde = zijde
+                }
+
+                draw() {
+                    ctx.rect(this.x, this.y, this.zijde, this.zijde);
+                    ctx.fillStyle = "black"
+                    ctx.fill();
+                }
+            }
+                let canvas = document.getElementById("vierkantCanvas");
+                let ctx = canvas.getContext("2d");
+                let v1 = new Vierkant(50, 50, 2, 10)
+
+                canvas.addEventListener("mouseclick", (event) => {
+                    leftPaddle.y = event.clientY;
+                });
+
+                function clear() {
+                    ctx.clearRect(0, 0, 700, 500);
+                }
+
+                function draw() {
+                    v1.draw()
+                }
+
+                function updateAnimationState() {
+
+                    // Update cube direction
+                    if (v1.x > 690) {
+                        v1.xRichting = -1;
+                    }
+
+                    else if (v1.x < 10) {
+                        v1.xRichting = 1;
+                    }
+
+                    // Update cube coordinates
+                    v1.x += v1.xRichting * v1.xsnelheid
+                }
+                function animate() {
+                    clear()
+
+                    updateAnimationState()
+
+                    draw()
+
+                    requestAnimationFrame(animate);
+                }
+                animate();
+        </script>
+
+    </canvas>
+</body>
+
+</html>

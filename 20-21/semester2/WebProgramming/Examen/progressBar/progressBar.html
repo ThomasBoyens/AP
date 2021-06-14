@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function update(progressBarId, increase) {
+            let element = document.getElementById(progressBarId);
+            let maxWaarde = element.getAttribute('max');
+            let value = element.getAttribute('value');
+            console.log(maxWaarde);
+            console.log(value);
+            if (increase >= maxWaarde) {
+                element.setAttribute('max', maxWaarde);
+                return true
+            }
+            else {
+                value += increase
+                element.setAttribute('value', value);
+                return false
+            }
+
+        }
+
+        document.body.innerHTML = `<progress id="loading-bar" value="0" max="100"></progress>`;
+        console.log(update("loading-bar", 50)); // should return false and loading-bar's value should be 50.
+        console.log(update("loading-bar", 50)); // should return true and loading-bar's value should be 100.
+
+    </script>
+</body>
+
+</html>
