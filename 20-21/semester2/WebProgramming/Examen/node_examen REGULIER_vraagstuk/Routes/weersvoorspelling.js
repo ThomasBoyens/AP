@@ -10,16 +10,15 @@ router.route("/")
 
 router.route("/:id")
     .get((req, res) => {
-        for (let i = 0; i < weerservice.length; i++) {
-            if (weerservice[i].id == req.params.id) {
-                if (req.params.id > weerservice.length) {
-                    res.send("Voorspelling niet beschikbaar")
-                }
-                else {
-                    let output = weerservice.splice(0, req.params.id)
-                    res.send(output)
-                }
+        if (req.params.id > weerservice.length) {
+            res.send("Voorspelling niet beschikbaar")
+        }
+        else {
+            let berichten = []
+            for (let i = 0; i < req.params.id; i++) {
+                berichten.push(weerservice[i])
             }
+            res.send(berichten)
         }
     })
 

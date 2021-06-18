@@ -22,11 +22,11 @@
                     this.x = x
                     this.y = y
                     this.xSnelheid = xsnelheid
-                    this.xRichting = 2
                     this.zijde = zijde
                 }
 
                 draw() {
+                    ctx.beginPath()
                     ctx.rect(this.x, this.y, this.zijde, this.zijde);
                     ctx.fillStyle = "black"
                     ctx.fill();
@@ -52,15 +52,15 @@
 
                     // Update cube direction
                     if (v1.x > 690) {
-                        v1.xRichting = -1;
+                        v1.xsnelheid= -1;
                     }
 
                     else if (v1.x < 10) {
-                        v1.xRichting = 1;
+                        v1.xsnelheid = 1;
                     }
 
                     // Update cube coordinates
-                    v1.x += v1.xRichting * v1.xsnelheid
+                    v1.x += v1.xsnelheid
                 }
                 function animate() {
                     clear()
