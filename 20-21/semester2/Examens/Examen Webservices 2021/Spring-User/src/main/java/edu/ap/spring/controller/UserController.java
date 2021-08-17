@@ -2,13 +2,15 @@ package edu.ap.spring.controller;
 
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.Set;
 
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import edu.ap.spring.redis.RedisService;
 
@@ -16,6 +18,54 @@ import edu.ap.spring.redis.RedisService;
 public class UserController {
 
 	private RedisService service;
+
+	@GetMapping("/")
+	private ResponseEntity<String> getIndex(){
+		return new ResponseEntity<String>("You are on the index page!", HttpStatus.OK);
+	}
+
+	//sign up user
+	@GetMapping("/signup")
+	private String getSignup() {
+		return "signupForm";
+	}
+
+	@PostMapping("/signup")
+	private String postSignup(@RequestParam("email") String email, @RequestParam("password") String password, HttpServletResponse response) {
+		
+		service.incr("usercount");
+		String id = service.getKey("usercount");
+		String bytesToHexValue = bytesToHex(email + password);
+
+		service.setKey("users:" + bytesToHexValue + ":" + id, email);
+
+		return "SIGNED UP";
+	}
+
+	// log in user
+	@GetMapping("/login")
+	private String getLogin() {
+		return "loginForm";
+	}
+
+	@PostMapping("/login")
+	private String postLogin(@RequestParam("email") String email, @RequestParam("password") String password) {
+		String bytesToHexValue = bytesToHex(email + password);
+
+		if(service.keys("users:" + bytesToHexValue + ":*").size() != 0)
+			return "LOGGED IN";
+		else
+			return "NOT LOGGED IN";
+	}
+
+	// get user detail
+	@RequestMapping(path = "/user/{userID}")
+	private String getUserEmail(@PathVariable("userID") String id){
+		Set<String> keys = service.keys("users:*:" + id);
+		String key = keys.iterator().next();
+		String email = service.getKey(key);
+		return email;
+	}
 
 	private String bytesToHex(String str) {
 		String retString = "";
@@ -36,55 +86,5 @@ public class UserController {
 
 		return retString;
 	}
-
-	/*@Before() 
-	public void init() {
-		service.setKey("usercount", "0");
-	}*/
-
-	//sign up user
-	@GetMapping("/signup")
-	public String getSignUpForm() {
-		return "signup";
-	}
-
-	@PostMapping("/signup")
-	public String signup(@RequestParam("email") String email, 
-	@RequestParam("paswoord") String paswoord,  
-	RedirectAttributes redirectAttributes) {
-		
-		service.setKey("usercount", "0");
-		service.incr("usercount");
-		service.keys("users:" + bytesToHex(email + paswoord) + ":" + "1");
-
-		return "SIGNED UP";
-	}
-
-	// log in user
-	@GetMapping("/login")
-	public String getLogInForm() {
-		return "login";
-	}
-
-	@PostMapping("/login")
-	public String login(@RequestParam("email") String email, @RequestParam("paswoord") String paswoord) {
-
-		String result;
-		if(service.exists(service.getKey(bytesToHex(email + paswoord)))) {
-			result = "LOGGED IN";
-		} else {
-			result = "NOT LOGGED IN";
-		}
-
-		return result;
-	}
-
-	// get user detail
-	@GetMapping("/{email}/{userid}")
-    public String getDetail(@PathVariable("email") String email,
-	Model model) {
-
-        return email;
-    }
 
 }

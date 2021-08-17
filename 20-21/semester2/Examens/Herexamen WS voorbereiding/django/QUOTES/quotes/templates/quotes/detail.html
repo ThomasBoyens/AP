@@ -1,0 +1,8 @@
+<h1>Quotes by {{ author.author_name }} : </h1>
+    <ul>
+    {% for quote in quote_list %}
+        <li>{{ quote.quote_text }}</a></li>
+    {% endfor %}
+    </ul>
+    <br /><br />
+    <a href='{% url 'quotes:index' %}'>Index</a>&nbsp&nbsp<a href='{% url 'quotes:add_quote' author.id %}'>Add Quote</a>

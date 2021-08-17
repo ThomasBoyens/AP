@@ -1,0 +1,8 @@
+<h1>Authors</h1>
+    <ul>
+    {% for author in authors %}
+        <li><a href='{% url 'quotes:detail' author.id %}'>{{ author.author_name }}</a> : {{ author.author_bio }}</li>
+    {% endfor %}
+    </ul>
+    <br /><br />
+    <a href='{% url 'quotes:search' %}'>Search</a>&nbsp&nbsp<a href='{% url 'quotes:add_author' %}'>Add Author</a>
