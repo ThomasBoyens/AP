@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>SIGNUP</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+  </head>
+
+  <body>
+    <div class='card card-body bg-light'>
+        <h2>SIGN UP PAGE</h2>
+        <br/>
+        
+        <form th:action="@{/signup}" method="POST">
+            <div class="form-group row">
+              <div class="col-xs-4">
+                <label for="email">Email : </label>
+                <input type="text" class="form-control" name="email" id="email" />
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-xs-4">
+                <label for="password">Password : </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="password"
+                  id="password"
+                />
+              </div>
+            </div>
+    
+            <input type="SUBMIT" value="Sign up" />
+          </form>
+        </div>
+    </div>
+  </body>
+</html>

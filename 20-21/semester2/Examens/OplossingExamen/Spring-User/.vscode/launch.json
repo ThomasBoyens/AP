@@ -1,0 +1,18 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch UserApplication",
+            "request": "launch",
+            "mainClass": "edu.ap.spring.UserApplication",
+            "projectName": "tml"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - TMLApplication",
+            "request": "launch",
+            "mainClass": "edu.ap.spring.tml.TMLApplication",
+            "projectName": "tml"
+        }
+    ]
+}

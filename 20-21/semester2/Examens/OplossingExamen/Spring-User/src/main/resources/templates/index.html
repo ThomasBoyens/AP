@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>SIGNUP</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+  </head>
+
+  <body>
+    <div class='card card-body bg-light'>
+        <h2>Welcome</h2>
+        <br/>
+        
+        <a href='/login'>Log in</a>
+        <br>
+        <a href='/signup'>Sign up</a>
+        <br>
+        <table  class='table'>
+        <tr th:each='user: ${users}'>
+            <td th:text='${user}' />
+            
+        </tr>
+    </table>
+        </div>
+    </div>
+  </body>
+</html>

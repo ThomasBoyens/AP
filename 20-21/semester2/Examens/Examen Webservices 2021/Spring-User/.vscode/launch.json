@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-UserApplication<tml>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "edu.ap.spring.UserApplication",
+            "projectName": "tml",
+            "args": ""
+        }
+    ]
+}
