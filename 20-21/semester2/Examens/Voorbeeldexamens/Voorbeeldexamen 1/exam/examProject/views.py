@@ -3,9 +3,6 @@ import string
 
 # Create your views here.
 
-
-
-
 def index(request):
     return render(request, 'examProject/index.html')
 
