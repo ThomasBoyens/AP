@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <title>Pokedex</title>
+
+  <link rel="stylesheet" href="./poke.css">
+</head>
+
+<body>
+  <div id="pokedex">
+    <div id="left">
+      <div id="logo"></div>
+      <div id="bg_curve1_left"></div>
+      <div id="bg_curve2_left"></div>
+      <div id="curve1_left">
+        <div id="buttonGlass">
+          <div id="reflect"> </div>
+        </div>
+        <div id="miniButtonGlass1"></div>
+        <div id="miniButtonGlass2"></div>
+        <div id="miniButtonGlass3"></div>
+      </div>
+      <div id="curve2_left">
+        <div id="junction">
+          <div id="junction1"></div>
+          <div id="junction2"></div>
+        </div>
+      </div>
+      <div id="screen">
+        <div id="topPicture">
+          <div id="buttontopPicture1"></div>
+          <div id="buttontopPicture2"></div>
+        </div>
+        <div id="picture">
+          <img id="img" src="" height="170" />
+        </div>
+        <div id="buttonbottomPicture"></div>
+        <div id="speakers">
+          <div class="sp"></div>
+          <div class="sp"></div>
+          <div class="sp"></div>
+          <div class="sp"></div>
+        </div>
+      </div>
+      <div id="bigbluebutton"></div>
+      <div id="barbutton1"></div>
+      <div id="barbutton2"></div>
+      <div id="cross">
+        <div id="leftcross">
+          <div id="leftT"></div>
+        </div>
+        <div id="topcross">
+          <div id="upT"></div>
+        </div>
+        <div id="rightcross">
+          <div id="rightT"></div>
+        </div>
+        <div id="midcross">
+          <div id="midCircle"></div>
+        </div>
+        <div id="botcross">
+          <div id="downT"></div>
+        </div>
+      </div>
+    </div>
+    <div id="right">
+      <div id="stats">
+        <p>
+          <strong>Name:</strong>&emsp;<span id="name" >Charmander</span><br />
+          <strong>Type:</strong>&emsp;<span id="type" >Fire</span><br />
+          <strong>Height:</strong>&emsp;<span id="height" >6</span> dm<br />
+          <strong>Weight:</strong>&emsp;<span id="weight" >85</span> hg
+        </p>
+      </div>
+      <div id="blueButtons1">
+        <div class="blueButton"></div>
+        <div class="blueButton"></div>
+        <div class="blueButton"></div>
+        <div class="blueButton"></div>
+        <div class="blueButton"></div>
+      </div>
+      <div id="blueButtons2">
+        <div class="blueButton"></div>
+        <div class="blueButton"></div>
+        <div class="blueButton"></div>
+        <div class="blueButton"></div>
+        <div class="blueButton"></div>
+      </div>
+      <div id="miniButtonGlass4"></div>
+      <div id="miniButtonGlass5"></div>
+      <div id="barbutton3"></div>
+      <div id="barbutton4"></div>
+      <div id="yellowBox1"></div>
+      <div id="yellowBox2" onclick="getUserInput()">Get a new pokemon</div>
+      <div id="bg_curve1_right"></div>
+      <div id="bg_curve2_right"></div>
+      <div id="curve1_right"></div>
+      <div id="curve2_right"></div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+    let sBaseUrl = "https://pokeapi.co/api/v2/pokemon/",
+      oCharRegex = RegExp("^[A-z]*$"),
+      oIntRegex = RegExp("^[0-9]*$");
+
+    function getUserInput(sMessage) {
+      // bevat het spaties
+      // bevat het een combinatie van letters en spaties
+      // is er input?
+      // cancelt de gebruiker?
+
+      //feedback geven aan gebruiker
+      let sOutput = "Please eneter your pokemon name or id";
+      sOutput += sMessage ? "\n"+sMessage : "";
+      // if (sMessage) {
+      //   sOutput += "\n" + sMessage;
+      // } else {
+      //   sOutput += "";
+     //  }
+      let sInput = prompt(sOutput, "charmander or 4");
+      if (sInput === null) {
+
+      } else if (sInput === "") {
+        getUserInput("Provide at least some content.")
+      } else if (sInput.indexOf(" ") >= 0) {
+        getUserInput("Don't use any spaces.") 
+      } else if (!oCharRegex.test(sInput) && !oIntRegex.test(sInput)) {  
+        getUserInput("You can't use characters and numbers at the same time.")
+      } else {
+        getPokemon(sInput);
+      }
+    }
+
+    function getPokemon(sParameter) { 
+      let sUrl = sBaseUrl + sParameter;
+      $.get(sUrl)
+      .done(function (oData) {
+         // console.log(oData);
+        $("#name").html(capFirstChar(oData.name));
+        $("#height").html(oData.height);
+        $("#weight").html(oData.weight);
+        // $("#type").html(getTypes(oData.types));
+        $("img").attr('src', getImageUrl(oData.id));
+      })
+      .fail(function (oError) {
+        console.error(oError);
+      });   
+    }
+    
+
+    function getImageUrl(nId) {
+      let sImgUrl = "https://assets.pokemon.com/assets/cms2/img/pokedex/full/",
+        sImgExt = ".png",
+        sImgId = nId.toString();
+      while (sImgId.length < 3) {
+        sImgId = "0" + sImgId;
+      }
+      return sImgUrl + sImgId + sImgExt;
+    }
+
+    // function getTypes(aTypes) {
+    //   let sTypes = "";
+    //   aTypes.foreach(function(oType) {
+    //     sTypes += capFirstChar(oType.type.name) + ", ";
+    //   });
+    //   return sTypes.slice(0, -2);
+    // }
+
+    function capFirstChar(sText) {
+      return sText[0].toUpperCase() + sText.slice(1);
+    }
+  </script>
+</body>
+
+</html>

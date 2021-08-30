@@ -1,0 +1,55 @@
+body {
+    background-color:powderblue;
+  }
+h1 {
+    color:navy;
+    text-align:center;
+}
+nav {
+    text-align:center;
+    width: 200 px;
+    margin: 50 px;
+}
+ul:hover {
+    border: 5px solid red;
+    border-radius: 10px;
+    width: 100px;
+}
+li:first-child{
+    color:red
+}
+li:nth-child(2){
+    color:white
+}
+li:nth-child(3){
+    color:green
+}
+div {
+    border: 20px dashed orange;
+    width: 300px;
+    margin: 50px;
+    padding: 2px; 
+    
+}
+span{
+    color: white;
+}
+    
+div p{
+    background-color: yellow
+}
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+.links{
+    float: left
+}
+.rechts{
+    float: right
+}
+audio{
+    float: right
+}
+img{
+    float: right
+}

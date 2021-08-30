@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>Recepten</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    </head>
+
+    <body>
+        <input id="inputfield" type="text" placeholder="naam gerecht">
+        <button onclick="SearchRecipe()">Search</button>
+
+        <div>
+            <h1 class="clear" id="title"></h1>
+            <h2 class="clear" id="ingredientsTitle"></h2>
+            <ul class="clear" id="ingredients"></ul>
+            <h2 class="clear" id="directionsTitle"></h2>
+            <ol class="clear" id="directions"></ol>
+        </div>
+
+        <script>
+            function SearchRecipe() {
+            $('.clear').html('');
+
+            var input = $("#inputfield").val();
+            $.get('https://797018ed-47c8-4ebe-8bde-b8cf9586d45e-bluemix.cloudant.com/recipes_complete/_design/views/_view/recipeSearch?key="' + input + '"' , function(data){
+                var ingredients = data.rows[0].value.ingredients; 
+                var directions = data.rows[0].value.directions;
+
+                $('#title').text(input);
+
+                $('#ingredientsTitle').text('ingredients');
+                ingredients.forEach(ingredient => {
+                    $('#ingredients').append('<li>' + ingredient.name + ' (' + ingredient.quantity + ' ' + ingredient.unit + ')' + '</li>');
+                    });
+
+                    $('#directionsTitle').text('directions');
+                    directions.forEach(direction => {
+                $('#directions').append('<li>' + direction + '</li>');
+                    });
+                });
+            }
+        </script>
+    </body>
+</html>

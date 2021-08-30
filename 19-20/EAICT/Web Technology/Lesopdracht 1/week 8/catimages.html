@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>Cat pictures</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+    <!-- Custom styles for this template -->
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+        body {
+            padding-top: 4.5rem;
+        }
+
+        #picture {
+
+            max-width: 500px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="loader"></div>
+
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">Pictures</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+         <br>
+         <br>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="catimages.html">pussy <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main role="main" class="container">
+        <div class="jumbotron">
+            <h1>Free pussy pics</h1>
+            <a class="btn btn-lg btn-primary" role="button" onclick="getImage()">pls pussy</a>
+            <br>
+            <br>
+            <div id="loader" class="spinner-border invisible" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
+            <img id=picture class=lead ></img>
+        </div>
+
+        
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function getImage() {
+            $('#picture').addClass("invisible");
+            $('#loader').removeClass("invisible");
+            $.get("https://api.thecatapi.com/v1/images/search", function(data){
+                $('#picture').attr("src", data[0].url);
+
+                $('#picture').removeClass("invisible");
+                $('#loader').addClass("invisible");
+            });
+        }
+    
+    </script>
+</body>
+
+</html>

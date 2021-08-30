@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>Meal DB</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+    <!-- Custom styles for this template -->
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+        body {
+            padding-top: 4.5rem;
+        }
+
+        .card {
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">MealDB</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Search by name</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Coming soon</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main role="main" class="container">
+        <!-- Jumbotron -->
+        <div class="jumbotron">
+            <h1>MealDB</h1>
+            <p class="lead">With the MealDB you can search your favorite meal either by name, ingredient or ID. You'll find some information about the meal, aswell as all the ingredients needed!</p>
+            <form>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Meal name / ID</label>
+                  <input type="text" class="form-control" id="mealInput" placeholder="Arrabiata / 52771">
+                </div>
+            </form>
+            <button class="btn btn-primary" onclick="searchMeal()">Search</button>
+            <button class="btn btn-primary" onclick="searchRandomMeal()">Random meal</button>
+        </div>
+
+        <!-- Cards -->
+        <!-- To display cards next to each other use ".card { display: inline-block; }" in the css -->
+        <div id="mealCards">
+
+        </div>
+    </main>
+
+    <!-- Dependicy scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Own script -->
+    <script src="meals.js"></script>
+</body>
+
+</html>

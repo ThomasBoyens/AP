@@ -1,0 +1,42 @@
+<html>
+    <body>
+        <script>
+        var sMessage ="hello there";
+console.log(sMessage);
+
+var oPerson = {firstName:"Thomas", lastName:"Boyens", dateOfBirth: "26/02/2001"};
+
+//var array1 = ["a", "b", "c"];
+//for (var i = 0; i < array1.length; i++) {
+    //console.table(array1[i]);
+//}
+
+ oPerson.Movies = [
+     {
+     title: "Inception",
+     year: "2010",
+     director: "Christopher Nolan"
+     }, 
+     {
+     title: "The Shining", 
+     year: "1980",
+     director: "Stanley Kubrick"
+     },
+     {
+     title: "Shrek",
+     year: "2001",
+     director: "Andrew Adamson"
+     }]
+
+ console.log(oPerson);
+
+function printPerson (oPerson) {
+    console.log("Voornaam: " + oPerson.firstName);
+    console.log("Achternaam: " + oPerson.lastName);
+    console.log("Geboortedatum: " + oPerson.dateOfBirth);
+    }
+printPerson(oPerson);
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <title>Week 5 - Lesoefening</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    </head>
+    <body>
+        <input type="number" id="number1" placeholder="Number1">
+
+        <button onclick="Plus()"class="btn btn-primary">Plus</button>
+        <button onclick="Min()"class="btn btn-primary">Min</button>
+        <button onclick="Maal()"class="btn btn-primary">Maal</button>
+        <button onclick="Delen()"class="btn btn-primary">Delen</button>
+
+        <input type="number" id="number2" placeholder="Number2">
+
+        <br>
+        <br>
+
+        <p id="outputfield"></p>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+             function Plus(){
+        var number1 = parseInt($("#number1").val());
+        var number2 = parseInt($("#number2").val());
+        var result = number1 + number2;
+        $("#outputfield").html(result);
+            }
+
+            function Min(){
+        var number1 = parseInt($("#number1").val());
+        var number2 = parseInt($("#number2").val());
+        var result = number1 - number2;
+        $("#outputfield").html(result);
+            }
+
+            function Maal(){
+        var number1 = parseInt($("#number1").val());
+        var number2 = parseInt($("#number2").val());
+        var result = number1 * number2;
+        $("#outputfield").html(result);
+            }
+
+            function Delen(){
+        var number1 = parseInt($("#number1").val());
+        var number2 = parseInt($("#number2").val());
+        var result = number1 / number2;
+        $("#outputfield").html(result);
+            }
+       
+
+
+
+        </script>
+    </body>
+</html>
