@@ -1,1 +1,2 @@
-Repository containing school projects and exercices.
+# AP Repository
+## A repository containing my personal school projects and exercises.
