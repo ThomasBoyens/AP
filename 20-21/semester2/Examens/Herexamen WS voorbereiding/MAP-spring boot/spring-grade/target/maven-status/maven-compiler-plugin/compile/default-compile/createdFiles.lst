@@ -1,0 +1,4 @@
+edu\ap\spring\grade\controller\GradeController.class
+edu\ap\spring\grade\GradeApplication.class
+edu\ap\spring\grade\jpa\Grade.class
+edu\ap\spring\grade\jpa\GradeRepository.class

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th='http://www.thymeleaf.org'>
+
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+  <title>Student List</title>
+</head>
+
+<body>
+  <h1>Student List</h1>
+  <br><br>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Date of birth</th>
+        <th>Study program</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each='student: ${students}'>
+        <td th:text='${student.firstName}' />
+        <td th:text='${student.lastName}' />
+        <td th:text='${student.birthdate}' />
+        <td th:text='${student.studyprogram}' />
+      </tr>
+    </tbody>
+  </table>
+
+  &nbsp;&nbsp;<a href="/">Home</a>
+  &nbsp;&nbsp;<a href="/student">add a student</a>
+ 
+</body>
+
+</html>

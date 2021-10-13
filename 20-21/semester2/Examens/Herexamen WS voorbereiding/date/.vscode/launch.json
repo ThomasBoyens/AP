@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-DateApplication<date>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "edu.ap.spring.date.DateApplication",
+            "projectName": "date",
+            "args": ""
+        }
+    ]
+}

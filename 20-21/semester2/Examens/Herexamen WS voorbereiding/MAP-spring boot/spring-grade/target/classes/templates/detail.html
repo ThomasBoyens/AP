@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th='http://www.thymeleaf.org'>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <title>Grade Detail</title>
+</head>
+
+<body>
+    <div class='card card-body bg-light'>
+        <h1>
+            <p th:text="${grade?.firstName} + ' ' + ${grade?.lastName} + ' : ' + ${grade?.grade}" />
+        </h1>
+    </div>
+
+    &nbsp;&nbsp;<a href="/grade">Grade a student</a>
+
+</body>
+
+</html>

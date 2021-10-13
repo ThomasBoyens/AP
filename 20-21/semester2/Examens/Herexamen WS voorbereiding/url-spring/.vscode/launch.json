@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-UrlApplication<url>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "edu.ap.spring.url.UrlApplication",
+            "projectName": "url",
+            "args": ""
+        }
+    ]
+}
