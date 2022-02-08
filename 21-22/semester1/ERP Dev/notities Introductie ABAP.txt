@@ -1,0 +1,55 @@
+Introductie ABAP
+
+SAP LANDSCAPE & TRANSPORT MECHANISM
+- 3 Landscape Architecture
+	- Development system
+	- Quality-Assurance System
+	- Production System
+
+- Transport maganement system (TMS)
+	- Overzetten van systeem naar systeem
+
+=> Transport Request
+	- Kan bestaan uit meerdere taken => met meerdere developers aan 1 taak werken
+
+Transactiecode beheren transporten: SE10
+
+ONTWIKKELTOOLS
+- SE80 Object Navigator (Workbench)
+- SE10 Transporteren
+- SE11 Data Dictionary
+- ...
+
+- /n + tcode open transaction in current window
+- /o + tcode open transaction in new window
+
+NAMING CONVENTIONS
+- Custom Development Objects (start met Z/Y)
+- Variables/Objects used while coding/writing programs
+
+- Program
+	- E.g: ZSD_041_LIST_PERSON_DETAILS
+- Function
+	- E.g: ZSD_041_GET_MATERIALS
+- Transaction
+	- E.g: ZSD_041_INTERFACE
+
+- Dictionary object
+...
+
+- Coding Variables
+...
+
+(Internal table = Array)
+
+
+
+
+
+
+
+
+
+
+
+
