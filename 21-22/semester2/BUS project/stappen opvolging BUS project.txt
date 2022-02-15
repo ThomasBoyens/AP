@@ -1,0 +1,17 @@
+Excel BUS project
+
+Backlog
+= stories maken
+-> backlog items verfijnen = tasks maken
+-> sprint plannen = milestones definieren per sprint
+-> stories toekennen aan milestones
+
+Sprints
+- In/aan vullen bij de start en einde van sprint
+	- Start: sprint planning
+	- Einde: sprint review
+=> uploaden digitap
+
+Github
+Issues + taken + milestone 
+bij push Issue ID meegeven
