@@ -1,0 +1,22 @@
+COMMENTAAR
+
+Jens:
+Jens werkt perfect mee in de groep, we werken ook vaak buiten de les nog samen aan het project. 
+Hij steekt veel tijd in het afwerken van de taken en communiceert steeds bij obstakels of moeilijkheden in het project.
+
+Thomas:
+Ik vind van mezelf dat ik goe meewerk in de groep, ik probeer ook mijn opgelegde taken steeds 
+af te krijgen ook al was dit deze sprint wat moeilijker met de login en security. Wanneer mijn 
+groepsleden hulp nodig hebben probeer ik ze ook te helpen om hun problemen op te lossen maar hier 
+had ik deze sprint ook niet zoveel tijd voor omdat de user story teveel werk was en had moeten opgedeeld worden in taken.
+
+Max:
+Max is een ijverige student en wilt de opdracht tot een goed einde brengen maar het lukt niet steeds bij hem. 
+Hij werkt goed mee met alles maar kan niet veel zelf wanneer het komt op code schrijven en ermee tewerk gaan. Max doet wel meer zijn 
+best dan met de eerste sprint en geeft al wat meer input, daar zie ik wel duidelijk verbetering in.
+
+Magomed:
+Magomed doet niet veel moeite voor de opdracht. Hij is niet zo technisch weggelegd waardoor we hem meestal 
+wat simpele taken geven die hij zou moeten kunnen afwerken maar dit lukt zelfs niet in meeste gevallen. Wanneer er ook iets niet werkt doet 
+hij weinig moeite om dit op te lossen en lijkt het alsof hij verwacht dat wij dit voor hem oplossen. Ook bij de meetings horen we weinig van hem.
+
